@@ -1,7 +1,13 @@
 /* Desenvolva sua estilização aqui... */
+body {
+    background-image: url(../../assets/img/Pexels\ Photo\ by\ Christina\ Morillo.svg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
 
 header {
-    background-image: url(../../assets/img/Pexels\ Photo\ by\ Christina\ Morillo.svg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -48,13 +54,26 @@ h1 {
     color: var(--color-grey-5);
 }
 
-.container--white {
+.header__description > div > p {
+    font-weight: 400;
+}
+
+#content--grey {
     background-color: var(--color-grey-5);
 }
 
 #jobs > h4 {
     padding-top: 43px;
     padding-bottom: 43px;
+}
+
+.content--flex {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    justify-content: space-between;
+
+    width: 100%;
 }
 
 .jobs__list {
@@ -96,6 +115,12 @@ h1 {
     max-width: fit-content;
 }
 
+aside {
+    background-color: var(--color-grey-6);
+
+    height: 100%;
+}
+
 .jobs__selected--title {
     padding: 32px;
 }
@@ -123,8 +148,37 @@ h1 {
     width: fit-content;
 }
 
+.button__job--delete:hover {
+    cursor: pointer;
+}
+
 i {
     border-radius: var(--radius-default);
     background-color: var(--color-grey-5);
     padding: 12px 16px;
+}
+@media screen and (min-width: 580px) {
+    .job__footer {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .job__modalities {
+        height: fit-content;
+        align-self: flex-end;
+    }
+}
+
+@media screen and (min-width: 991px) {
+    .content--flex {
+        flex-direction: row;
+    }
+    .jobs__list {
+        max-width: 60%;
+    }
+
+    aside {
+        max-width: 35%;
+        position: sticky;
+        top: 43px;
+    }
 }

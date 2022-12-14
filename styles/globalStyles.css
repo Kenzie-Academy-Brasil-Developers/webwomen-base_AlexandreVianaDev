@@ -60,7 +60,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .container {
-  width: 76rem;
+  width: 1440px;
 
   max-width: 100%;
   margin: 0 auto;
@@ -160,6 +160,10 @@ h1, h2, h3, h4, h5, h6 {
     --title-1: calc(3rem / 1.2);
     --title-2: calc(2.5rem / 1.2);
     --title-3: calc(2rem / 1.2);
+    --title-4: calc(1.375rem / 1.2);
+    --title-5: calc(1.125rem / 1.2);
     --text-1:  calc(1.125rem / 1.2);
+    --text-2:  calc(1rem / 1.2);
+    --text-3:  calc(0.875rem / 1.2);;
   }
 }
