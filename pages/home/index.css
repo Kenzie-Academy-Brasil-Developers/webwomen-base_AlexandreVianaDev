@@ -137,6 +137,10 @@ aside {
     gap: 20px;
 }
 
+.job__selected:hover {
+    background-color: var(--color-grey-4);
+}
+
 .job__selected--header {
     display: flex;
     justify-content: space-between;
@@ -152,6 +156,10 @@ aside {
     cursor: pointer;
 }
 
+.button__job--delete:hover i {
+    background-color: var(--color-grey-3);
+}
+
 i {
     border-radius: var(--radius-default);
     background-color: var(--color-grey-5);
@@ -162,9 +170,14 @@ i {
         flex-direction: row;
         justify-content: space-between;
     }
+    .job__footer > div {
+        display: flex;
+        align-items: flex-end;
+        gap: 16px;
+    }
     .job__modalities {
         height: fit-content;
-        align-self: flex-end;
+        /* align-self: flex-end; */
     }
 }
 
