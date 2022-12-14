@@ -1,6 +1,6 @@
 /* Desenvolva sua lógica aqui... */
 
-const selectedJobs = []
+let selectedJobs = []
 
 function renderJobs() {
     const jobsList = document.querySelector(".jobs__list")
@@ -37,40 +37,86 @@ function prepareJobsApplyButton () {
 
     buttonsConverted.map(button => {
         button.addEventListener("click", (e) =>{
-            // console.log(button.dataset.id)
-            addToSelectedJobs (button.dataset.id)
+            button.classList.toggle("applied")
+            if (button.classList.contains("applied")) {
+                button.innerText = "Remover candidatura"
+                addToSelectedJobs (button.dataset.id)
+            }
+            else {
+                button.innerText = "Candidatar"
+                removeFromSelectedJobs(button.dataset.id)
+            }
         })
     })
+}
+
+function updateApplyButtons () {
+    const buttons = document.querySelectorAll(".job__apply")
+    const buttonsConverted = [...buttons]
+
+    buttonsConverted.map(button => {
+        if (selectedJobs.find(job => job.id == button.dataset.id)) {
+            button.classList.add("applied")
+        }
+        else {
+            button.classList.remove("applied")
+        }
+    })
+
+    // buttonsConverted.innerText = "Candidatar"
+
+    buttonsConverted.filter(button => !button.classList.contains("applied")).map(button => button.innerText = "Candidatar")
+
+    buttonsConverted.filter(button => button.classList.contains("applied")).map(button => button.innerText = "Remover candidatura")
 }
 
 function addToSelectedJobs (id) {
     const job = jobsData.find(job => job.id === parseInt(id))
     selectedJobs.push(job)
+    setLocalStorage ()
     renderSelectedJobs()
+}
+
+function setLocalStorage () {
+    localStorage.setItem("@Webwomen:selectJobs", JSON.stringify(selectedJobs))
+}
+
+function getLocalStorage () {
+    selectedJobs = JSON.parse(localStorage.getItem("@Webwomen:selectJobs")) ||[]
 }
 
 function renderSelectedJobs () {
     const selectedJobsList = document.querySelector(".jobs__selected")
 
-    selectedJobsList.innerHTML = ""
-    
-    selectedJobs.map(selectedJob => {
-        // console.log(selectedJob)
-        selectedJobsList.insertAdjacentHTML("beforeend", `
+    if (selectedJobs.length === 0) {
+        selectedJobsList.innerHTML = ""
+
+        selectedJobsList.insertAdjacentHTML("beforeend",`
         <li class="job__selected">
-            <div class="job__selected--header">
-                <h5 class="title-5">${selectedJob.title}</h5>
-                <button class="button__job--delete" data-id="${selectedJob.id}">
-                    <i class="fa-solid fa-trash"></i>
-                </button>
-            </div>
-            <div class="job__enterprise">
-                <span class="enterprise__name text-3">${selectedJob.enterprise}</span>
-                <span class="enterprise__location text-3">${selectedJob.location}</span>
-            </div>
+            <span class="text-2">Você ainda não aplicou para nenhuma vaga</span>
         </li>
-    `)
-    })
+        `)
+    }
+    else {
+        selectedJobsList.innerHTML = ""
+        
+        selectedJobs.map(selectedJob => {
+            selectedJobsList.insertAdjacentHTML("beforeend", `
+            <li class="job__selected">
+                <div class="job__selected--header">
+                    <h5 class="title-5">${selectedJob.title}</h5>
+                    <button class="button__job--delete" data-id="${selectedJob.id}">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </div>
+                <div class="job__enterprise">
+                    <span class="enterprise__name text-3">${selectedJob.enterprise}</span>
+                    <span class="enterprise__location text-3">${selectedJob.location}</span>
+                </div>
+            </li>
+        `)
+        })
+    }
 
     prepareSelectedJobsDeleteButton ()
 }
@@ -81,22 +127,23 @@ function prepareSelectedJobsDeleteButton () {
 
     deleteButtonsConverted.map(element => {
         element.addEventListener("click", (e) => {
-            // console.log(element.dataset.id)
             removeFromSelectedJobs(element.dataset.id)
+            updateApplyButtons()
         })
     })
 }
 
 function removeFromSelectedJobs(id) {
-
     selectedJobs.splice(selectedJobs.findIndex(element => element.id === parseInt(id)),1)
-
+    setLocalStorage ()
     renderSelectedJobs()
 }
 
-
 function start () {
     renderJobs()
+    getLocalStorage()
+    renderSelectedJobs()
+    updateApplyButtons ()
 }
 
 start ()

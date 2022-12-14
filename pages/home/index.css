@@ -4,6 +4,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    background-position: center;
 }
 
 
@@ -190,7 +191,7 @@ i {
     }
 
     aside {
-        max-width: 35%;
+        width: 35%;
         position: sticky;
         top: 43px;
     }
