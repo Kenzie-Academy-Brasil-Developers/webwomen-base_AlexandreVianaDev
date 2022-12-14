@@ -5,6 +5,9 @@
   margin: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  text-decoration: none;
+  list-style: none;
+  border: none;
 }
 
 img {
@@ -28,21 +31,128 @@ img {
   --title-4: 1.375rem;
   --title-5: 1.125rem;
 
+  --title-weight: 600;
+
+  --title-1-line-height: 4.5rem;
+  --title-2-line-height: 3.75rem;
+  --title-3-line-height: 3rem;
+  --title-4-line-height: 2.063rem;
+  --title-5-line-height: 1.688rem;
+
   --text-1:  1.125rem;
   --text-2:  1rem;
   --text-3:  0.875rem;
+
+  --text-weight: 500;
+
+  --text-1-line-height: 2.25rem;
+  --text-2-line-height: 2rem;
+  --text-3-line-height: 1.375rem;
 }
 
-body {
+body, a, button {
   font-family: "Poppins", sans-serif;
+  color: var(--color-grey-2);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-grey-1);
 }
 
 .container {
   width: 76rem;
+
   max-width: 100%;
   margin: 0 auto;
+
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+.title-1 {
+  font-size: var(--title-1);
+  font-weight: var(--title-weight);
+  line-height: var(--title-1-line-height);
+}
+
+.title-2 {
+  font-size: var(--title-2);
+  font-weight: var(--title-weight);
+  line-height: var(--title-2-line-height);
+}
+
+.title-3 {
+  font-size: var(--title-3);
+  font-weight: var(--title-weight);
+  line-height: var(--title-3-line-height);
+}
+
+.title-4 {
+  font-size: var(--title-4);
+  font-weight: var(--title-weight);
+  line-height: var(--title-4-line-height);
+}
+
+.title-5 {
+  font-size: var(--title-5);
+  font-weight: var(--title-weight);
+  line-height: var(--title-5-line-height);
+}
+
+.text-1 {
+  font-size: var(--text-1);
+  font-weight: var(--text-weight);
+  line-height: var(--text-1-line-height);
+}
+
+.text-2 {
+  font-size: var(--text-2);
+  font-weight: var(--text-weight);
+  line-height: var(--text-2-line-height);
+}
+
+.text-3 {
+  font-size: var(--text-3);
+  font-weight: var(--text-weight);
+  line-height: var(--text-3-line-height);
+}
+
+.button {
+  color: var(--color-grey-6);
+
+  background-color: var(--color-brand-1);
+
+  border: 2px solid var(--color-brand-1);
+  border-radius: var(--radius-default);
+}
+
+.button:hover {
+  background-color: var(--color-brand-2);
+
+  border: 2px solid var(--color-brand-2);
+  border-radius: var(--radius-default);
+
+  cursor: pointer;
+}
+
+.button--big {
+  padding: 12px 50px;
+}
+
+.button--tiny {
+  padding: 7px 28px;
+}
+
+.modality {
+  padding: 4px 12px;
+
+  background-color: var(--color-grey-3);
+
+  border-radius: var(--radius-default);
+}
+
+.semibold {
+  font-weight: var(--title-weight);
 }
 
 @media(max-width: 991px){

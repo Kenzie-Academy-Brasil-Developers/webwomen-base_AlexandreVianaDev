@@ -1,1 +1,130 @@
 /* Desenvolva sua estilização aqui... */
+
+header {
+    background-image: url(../../assets/img/Pexels\ Photo\ by\ Christina\ Morillo.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+header > div {
+    background-color: rgba(0,0,0,0.7);
+
+    padding-top: 100px;
+    padding-bottom: 118px;
+}
+
+header > div > .container {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+header > div > .container > img {
+    width: 194px;
+}
+
+.header__texts {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+h1 {
+    color: var(--color-grey-3);
+
+    font-size: var(--title-3);
+    font-weight: var(--title-weight);
+    line-height: var(--title-3-line-height);
+}
+
+.header__description {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.header__description > p, .header__description > div > p {
+    color: var(--color-grey-5);
+}
+
+.container--white {
+    background-color: var(--color-grey-5);
+}
+
+#jobs > h4 {
+    padding-top: 43px;
+    padding-bottom: 43px;
+}
+
+.jobs__list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.job {
+    background-color: var(--color-grey-6);
+
+    border-radius: var(--radius-default);
+
+    padding: 38px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.job__header {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.job__header > div, .job__enterprise {
+    display: flex;
+    gap: 32px;
+}
+
+.job__footer {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.job__modalities {
+    max-width: fit-content;
+}
+
+.jobs__selected--title {
+    padding: 32px;
+}
+
+.job__selected {
+    background-color: var(--color-grey-6);
+
+    border-radius: var(--radius-default);
+
+    padding: 32px 28px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.job__selected--header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button__job--delete {
+    border-radius: var(--radius-default);
+    height: fit-content;
+    width: fit-content;
+}
+
+i {
+    border-radius: var(--radius-default);
+    background-color: var(--color-grey-5);
+    padding: 12px 16px;
+}

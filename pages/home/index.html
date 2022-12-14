@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/styles/globalStyles.css">
     <link rel="stylesheet" href="index.css">
     <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/6b12ebc41a.js" crossorigin="anonymous"></script>
     <title>Webwomen</title>
     <meta
       name="description"
@@ -16,8 +17,108 @@
     />
 </head>
 <body>
-    <main></main>
-    <script src="jobsData.js"></script>
-    <script src="index.js"></script>
+    <header>
+      <div>
+        <div class="container">
+          <img src="../../assets/img/logo.svg" alt="Webwoman">
+          <div class="header__texts">
+            <h1>Lugar de mulher é onde ela quiser!</h1>
+
+            <div class="header__description">
+              <div>
+                <p class="text-1">Está procurando oportunidades de estágio, emprego ou bolsas de estudo?</p>
+                <p class="text-1">Ou até mesmo oportunidades para atender eventos de tecnologia no Brasil e ao redor do mundo?</p>
+              </div>
+              <p class="title-5">Confere aqui embaixo o que temos pra você!</p>
+            </div>
+          </div>
+          <nav>
+            <ul>
+              <li>
+                <a href="#jobs"><button class="button button--big text-2">Ir para seção das vagas</button></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <div class="container container--white">
+      <main id="jobs">
+          <h4 class="title-4">Vagas</h4>
+          <ul class="jobs__list">
+            <li class="job">
+              <div class="job__header">
+                <h4 class="job__title title-4">Pessoa desenvolvedora front-end - React JS</h4>
+                <div>
+                  <span class="enterprise__name text-3">Kenzie Academy</span>
+                  <span class="enterprise__location text-3">Curitiba</span>
+                </div>
+              </div>
+
+              <p class="job__description text-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+
+              <div class="job__footer">
+                <span class="job__modalities modality text-3">Home Office</span>
+                <button class="job__apply button button--big text-2">Candidatar</button>
+              </div>
+            </li>
+            <li class="job">
+              <div class="job__header">
+                <h4 class="job__title title-4">Pessoa desenvolvedora front-end - React JS</h4>
+                <div>
+                  <span class="enterprise__name text-3">Kenzie Academy</span>
+                  <span class="enterprise__location text-3">Curitiba</span>
+                </div>
+              </div>
+
+              <p class="job__description text-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+
+              <div class="job__footer">
+                <span class="job__modalities modality text-3">Home Office</span>
+                <button class="job__apply button button--big text-2">Candidatar</button>
+              </div>
+            </li>
+            <li class="job">
+              <div class="job__header">
+                <h4 class="job__title title-4">Pessoa desenvolvedora front-end - React JS</h4>
+                <div>
+                  <span class="enterprise__name text-3">Kenzie Academy</span>
+                  <span class="enterprise__location text-3">Curitiba</span>
+                </div>
+              </div>
+
+              <p class="job__description text-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+
+              <div class="job__footer">
+                <span class="job__modalities modality text-3">Home Office</span>
+                <button class="job__apply button button--big text-2">Candidatar</button>
+              </div>
+            </li>
+          </ul>
+      </main>
+
+      <aside>
+        <h4 class="title-4 jobs__selected--title">Vagas selecionadas</h4>
+        <ul class="jobs__selected">
+          <li class="job__selected">
+            <div class="job__selected--header">
+              <h5 class="title-5">Pessoa desenvolvedora front-end - React JS lore</h5>
+              <button class="button__job--delete">
+                 <i class="fa-solid fa-trash"></i>
+              </button>
+
+            </div>
+            <div class="job__enterprise">
+              <span class="enterprise__name text-3">Kenzie Academy</span>
+              <span class="enterprise__location text-3">Curitiba</span>
+            </div>
+          </li>
+        </ul>
+      </aside>
+    </div>
+
+  <script src="jobsData.js"></script>
+  <script src="index.js"></script>
 </body>
 </html>
